@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 p-8">
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl mb-4">Chat Messages</h1>
+        <ul>
+            <% messages.forEach(message => { %>
+            <li class="mb-2"><span class="text-blue-500"><%= message.username %> :</span> <%= message.message %></li>
+            <% }); %>
+        </ul>
+        <form action="/send" method="POST" class="mt-4">
+            <input type="text" name="username" placeholder="Your username" class="block w-full px-4 py-2 border border-gray-300 rounded-md mb-2">
+            <input type="text" name="message" placeholder="Type your message here" class="block w-full px-4 py-2 border border-gray-300 rounded-md mb-2">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-1 rounded-full hover:bg-blue-600">Send</button>
+        </form>
+    </div>
+    
+</body>
+</html>
